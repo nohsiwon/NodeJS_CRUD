@@ -78,7 +78,7 @@ router.delete('/products/:productId', async (req, res) => {
 
   const deleteProduct = await Products.findOne({ _id: productId });
   if (deleteProduct) {
-    await Products.deleteOne({ password }, { _id: productId });
+    await Products.deleteOne({ _id: productId, password });
   } else {
     return res.status(400).json({ success: false, errorMessage: '상품 조회에 실패하였습니다' });
   }
