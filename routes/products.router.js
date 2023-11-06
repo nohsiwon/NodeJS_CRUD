@@ -15,7 +15,7 @@ router.post('/products', async (req, res) => {
 // 상품 목록 조회 API
 router.get('/products', async (req, res) => {
   const products = await Products.find().sort({ createdAt: -1 });
-  if (products.length) {
+  if (products) {
     const result = products.map((product) => {
       return {
         _id: product._id,
@@ -78,6 +78,9 @@ router.delete('/products/:productId', async (req, res) => {
 
   const deleteProduct = await Products.findOne({ _id: productId });
   if (deleteProduct) {
+    if (deleteProduct.password !== password) {
+      return res.status(400).json({ success: false, errorMessage: '비밀번호가 일치하지 않습니다' });
+    }
     await Products.deleteOne({ _id: productId, password });
   } else {
     return res.status(400).json({ success: false, errorMessage: '상품 조회에 실패하였습니다' });
