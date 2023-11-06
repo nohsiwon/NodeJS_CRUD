@@ -4,11 +4,14 @@
 - Database : mongoDB
 - ODM : mongoose
 
+
 ### 프로젝트 소개 ☝
 mongoDB로 데이터를 관리한 장터 CRUD
 
+
 ### 개발 기간 💻
 - 23.11.03 ~ 23.11.06
+
 
 ### 주요 요소 📌
 - RESTful 추구
