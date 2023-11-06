@@ -1,7 +1,7 @@
 ### 사용 기술 ⚙
 - Runtime : Node.js
 - Framework : express.js
-- Database : mongoDB
+- Database : mongoDB Atlas
 - ODM : mongoose
 
 
